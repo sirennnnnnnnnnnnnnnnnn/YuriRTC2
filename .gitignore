@@ -1,0 +1,49 @@
+node_modules/
+dist/
+packages/integrity/loader.json
+*.tsbuildinfo
+*.tgz
+coverage/
+
+# Reproducible, obfuscated static carrier output. Readable sources and the
+# build script stay tracked under deploy/npm/src and deploy/npm/build.mjs.
+deploy/npm/index.html
+deploy/npm/sw.js
+deploy/npm/bundled/
+# Per-deployment copies of that generated pair, one directory per destination.
+deploy/npm/deployments/
+.env
+.env.*
+!.env.example
+.playwright-mcp/
+
+# Go build output
+content-node/content-node
+content-node/yurirtc-node
+content-node/*.test
+
+# Release binaries and packed tarballs staged for upload
+build/
+
+# Never commit credentials — one service account covers both signaling legs.
+# Firebase's generated admin credential filenames do not follow one stable
+# shape. Keep the patterns broad so a new project cannot leak its key.
+service-account.json
+*-credentials.json
+*adminsdk*.json
+*serviceaccount*.json
+*.pem
+*.key
+node.env
+
+# firebase-tools writes deploy caches here
+deploy/firebase/.firebase/
+
+# Internal deployment notes, never published
+INTERNAL-README.md
+
+# Public upstream DTLS example fixtures, required by the vendored module.
+!third_party/pion-dtls/examples/certificates/client.pem
+!third_party/pion-dtls/examples/certificates/client.pub.pem
+!third_party/pion-dtls/examples/certificates/server.pem
+!third_party/pion-dtls/examples/certificates/server.pub.pem
